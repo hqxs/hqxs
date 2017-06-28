@@ -15,4 +15,16 @@ class Gifts extends Model
         "goods_gifts.desc",
         "goods_gifts.name"
     ];
+//    详情页
+    static public $list = [
+        "goods_gifts.name",
+        "goods_gifts.price",
+        "goods_gifts.focus",
+        "goods_gifts.store",
+        "goods_gifts.sold",
+        "goods_gifts.desc",
+        "goods_images.icon"
+    ];
+//    列表小图片
+    static public $icon = "goods_images.icon";
 }

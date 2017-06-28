@@ -165,6 +165,9 @@
 @section('shopAll')
 
     @show
+@section("shopList")
+
+    @show
 <!-- 悬浮登入js -->
 <script type="text/javascript" src="/js/home/index/saved_resource(2)"></script>
 <div class="xfooter">

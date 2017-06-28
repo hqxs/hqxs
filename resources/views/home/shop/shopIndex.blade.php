@@ -9,6 +9,7 @@
     {{--<script async="" src="/js/home/index/analytics(1).js"></script>--}}
     {{--<script src="/js/home/index/hm(1).js"></script>--}}
     {{--jq文件--}}
+    <script type="text/javascript" src="/js/home/index/saved_resource(2)"></script>
     <script type="text/javascript" src="/js/home/index/saved_resource(1)"></script>
     @endsection
 @section('title','商城_首页')

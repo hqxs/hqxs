@@ -8,6 +8,7 @@
     <script async="" src="/js/home/index/analytics.js"></script>
     <script src="/js/home/index/hm.js"></script>
     <script src="/js/home/index/sdk.js"></script>
+    <script type="text/javascript" src="/js/home/index/saved_resource(2)"></script>
     {{--计时器--}}
     <script type="text/javascript" src="/js/home/index/saved_resource(1)"></script>
     @endsection

@@ -14,9 +14,10 @@
 Route::get("/","Home\ShopIndexController@index");
 //礼品馆
 Route::get("shop/gift","Home\ShopGiftController@index");
-Route::get("shop/gift/all","Home\ShopGiftAllController@index");
+Route::get("shop/gift/all/{id}","Home\ShopGiftAllController@index");
+Route::get("shop/gift/li/{id}","Home\ShopGiftListController@index");
 //生活馆
 Route::get("shop/lift","Home\ShopLiftController@index");
 
 
-Route::post("shop/gift","Home\ShopGiftController@Up");
+Route::get("/shop/gift2","Home\ShopGiftController@Up");
