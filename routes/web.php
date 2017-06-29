@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//登录
+Route::get('login','Home\UserController@index');
+Route::get('login/user','Home\UserController@login');
+
+//路由分组
+Route::get('/cate','Home\AjaxController@cate');
+
+//话题路由
+Route::resource('group','Home\ArtController');
+
+
+
