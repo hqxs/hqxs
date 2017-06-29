@@ -4,17 +4,15 @@
     <link rel="stylesheet" href="/css/shopList.css">
     @endsection
 @section("js")
-    <script src="/js/home/shoplist/analytics.js"></script>
-    <script src="/js/home/shoplist/hm.js"></script>
-    <script src="/js/home/shoplist/saved_resource(1)"></script>
-    <script src="/js/home/shoplist/saved_resource(2)"></script>
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    {{--<script src="/js/home/shoplist/saved_resource(1)"></script>--}}
     @endsection
 @section("shopList")
     <div class="ie6hack">&nbsp;</div>
     <div class="warpb clearfix">
         <div class="auto pdt20 fs">
             <a title="商城" href="/">商城</a> &gt;
-            <a title="礼品馆" href="shop/gift">礼品馆</a> &gt;
+            <a title="礼品馆" href="/shop/gift">礼品馆</a> &gt;
         </div>
         <div class="shop_imbgbox">
             @foreach($list as $list)
@@ -55,23 +53,65 @@
                     <li>
                         <p class="dt">购买数量：</p>
                         <div class="dd">
-                            <a id="delnum" title="减少" href="javascript://" class="math_cut">-</a>						<input id="buynum" type="text" value="1" size="4" class="inpx tc">
-                            <a title="增加" id="addnum" href="javascript://" class="math_add">+</a>库存<span id="goodsstock">102</span>件
+                            <a id="delnum" title="减少" href="javascript://" class="math_cut">-</a>
+                            <input id="buynum" type="text" value="1" size="4" class="inpx tc">
+                            <a title="增加" id="addnum" href="javascript://" class="math_add">+</a>
+                            库存<span id="goodsstock">{{$list->store}}</span>件
                         </div>
                     </li>
+                    <script>
+                        $(function (){
+                            var count = $("#goodsstock").text();
+                            $("#delnum").click(function (){
+                                var num = parseInt($(this).next().val() - 1);
+                                if(num <= 1) {
+                                    $("#buynum").val(1);
+                                }else if(num > count) {
+                                    $("#buynum").val(count);
+                                }else{
+                                    $("#buynum").val(num);
+                                }
+                            });
+                            $("#addnum").click(function (){
+                                var num = parseInt($(this).prev().val()) ;
+                                if(num >= count){
+                                    $("#buynum").val(count);
+                                }else {
+                                    $("#buynum").val(num + 1);
+                                }
+                            })
+                        })
+                    </script>
                     <li class="dline">
-                        <p class="dt pos_is_upx">支付方式：</p>
+                        <p class="dt pos_is_upx">方式：</p>
                         <div class="dd">
-                            <em class="ev">支付宝</em><!-- <em>现金支付</em><em>混合支付</em> -->
+                            <em class="ev">支 付 宝</em>
+                            <em class="ev">购 物 车</em>
                         </div>
                     </li>
                     <li class="mgt10">
                         <p class="dt">&nbsp;</p>
                         <div class="dd">
-                            <a id="buy_837" name="buynow" title="立即兑换" href="javascript:///" class="dbtn btn_orange f14">立即购买</a>
-                            <a id="buy_837" name="buynow" title="加入购物车" href="javascript:///" class="dbtn btn_orange f14">加入购物车</a>
+                            <a id="buy_837" name="buynow" title="立即兑换" href="" class="dbtn btn_orange f14">立即购买</a>
+                            <a id="buy_837" name="buynow" title="加入购物车" href="/shop/cart/{{$list->id}}" class="dbtn btn_orange f14">加入购物车</a>
                         </div>
                     </li>
+                    <script>
+                        $(function (){
+                            $(".dd em").eq(0).click(function (){
+                                $(this).css("border","2px solid rgb(38,188,213)");
+                                $(".dd em").eq(1).css("border","");
+                                $(".dd #buy_837").eq(1).css("display","none");
+                                $(".dd #buy_837").eq(0).show();
+                            })
+                            $(".dd em").eq(1).click(function (){
+                                $(this).css("border","2px solid rgb(38,188,213)");
+                                $(".dd em").eq(0).css("border","");
+                                $(".dd #buy_837").eq(0).css("display","none");
+                                $(".dd #buy_837").eq(1).show();
+                            })
+                        })
+                    </script>
                 </ul>
             </div>
                 @endforeach
@@ -86,16 +126,16 @@
                             <li>
                                 <div class="exc" style="display:block;height: 300px;">
                                     <p style="text-align: center">
-                                        <a href="/shop/gift/li/{{$v['id']}}" title="{{$v['name']}}">{{$v['name']}}</a>
+                                        <a href="/shop/gift/li/{{$v->id}}" title="{{$v->name}}">{{$v->name}}</a>
                                     </p>
                                     <div class="pimg">
-                                        <a href="/images/{{$v['icon']}}" title="{{$v['name']}}">
-                                            <img src="/images/{{$v['icon']}}" alt="{{$v['name']}}">
+                                        <a href="/images/{{$v->icon}}" title="{{$v->name}}">
+                                            <img src="/images/{{$v->icon}}" alt="{{$v->name}}">
                                         </a>
                                     </div>
                                     <p class="isht">
-                                        <i class="ico32 hd_money">&nbsp;</i>{{$v['price']}}豆币
-                                        <p><span>已售</span><span>{{$v['sold']}}</span></p>
+                                        <i class="ico32 hd_money">&nbsp;</i>{{$v->price}}豆币
+                                        <p><span>已售</span><span>{{$v->sold}}</span></p>
                                     </p>
                                 </div>
                             </li>
@@ -119,6 +159,15 @@
                         <a title="商品评论" href="javascript:///">商品评论</a>
                     </p>
                 </div>
+                <script>
+                    $(".srb_mubox a").click(function (){
+                       var index = $(this).index();
+                        $(".srb_mubox a").removeClass("selx");
+                        $(".srb_mubox a").eq(index).addClass("selx");
+                        $(".product_tab_content").hide();
+                       $(".product_tab_content").eq(index).show();
+                    })
+                </script>
                 <div class="product_tab_content">
                     <div class="srb_unit">
                         <h2>商品详情</h2>
@@ -161,13 +210,12 @@
                                 </div>
                                 <div class="write clearfix mgt20 mgb20">
                                     <div class="photo">
-                                        <a href="javascript:///" title=""><img width="70" height="70" id="__cmt_avatar" alt="" src="./实智P1.智能排插_商城_好豆网_files/48901_48.jpg"></a>
+                                        <a href="javascript:///" title="">
+                                            <img width="70" height="70" id="__cmt_avatar" alt="" src="">
+                                        </a>
                                     </div>
                                     <div class="cmt_main clearfix">
                                         <div class="aera_up clearfix fl">
-                                            <div class="fl">
-                                                <a href="javascript:///" id="__cmt_face_comment" class="area_face vtl"><img src="./实智P1.智能排插_商城_好豆网_files/temp-14.gif"></a>
-                                            </div>
                                             <div class="syn fr mgt5" id="_cmt_syn_comment" style="width:auto"></div>
                                         </div>
                                         <textarea class="fl gray9" rows="" cols="" id="__cmt_content_comment"></textarea>

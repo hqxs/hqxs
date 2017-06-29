@@ -10,8 +10,8 @@
 </head>
 <body>
 <div class="status_space">&nbsp;</div>
-<div class="new_status clearfix">
-    <div class="warpb clearfix" id="hd_head">
+<div class="new_status clearfix" style="text-align: center">
+    <div class="warpb clearfix" id="hd_head" style="text-align: center">
         <div class="fl">
             <a href="">好豆网</a> |
             <a href="">菜谱</a> |
@@ -105,7 +105,7 @@
         </div>
     </div>
 </div>
-<div class="def_header clearfix">
+<div class="def_header clearfix" style="text-align: center">
     <div class="warpb clearfix">
         <div class="row def_pad_td shop">
             <div class="logo">
@@ -168,9 +168,12 @@
 @section("shopList")
 
     @show
+@section("shopCart")
+
+    @show
 <!-- 悬浮登入js -->
-<script type="text/javascript" src="/js/home/index/saved_resource(2)"></script>
-<div class="xfooter">
+{{--<script type="text/javascript" src="/js/home/index/saved_resource(2)"></script>--}}
+<div class="xfooter" style="text-align: center">
     <div class="warpb clearfix">
         <dl class="xf_box">
             <dt>关于我们</dt>

@@ -13,10 +13,12 @@ class Gifts extends Model
         "goods_gifts.price",
         "goods_images.icon",
         "goods_gifts.desc",
-        "goods_gifts.name"
+        "goods_gifts.name",
+        "goods_gifts.store"
     ];
 //    详情页
     static public $list = [
+        "goods_gifts.id",
         "goods_gifts.name",
         "goods_gifts.price",
         "goods_gifts.focus",

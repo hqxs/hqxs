@@ -29,7 +29,7 @@ class ShopGiftListController extends Controller
                         ->where("goods_gifts.store",">","0")
                         ->where("goods_gifts.up","1")
                         ->limit("3")
-                        ->get()->toArray();
+                        ->get();
         $sold = Gifts::select(["goods_gifts.id","goods_gifts.name","goods_gifts.price","goods_images.icon","goods_gifts.sold"])
                         ->leftJoin("goods_images","goods_gifts.id","goods_images.goodsId")
                         ->where("goods_gifts.up","1")
@@ -37,7 +37,7 @@ class ShopGiftListController extends Controller
                         ->where("goods_gifts.store",">","0")
                         ->orderBy("sold","desc")
                         ->limit("8")
-                        ->get()->toArray();
+                        ->get();
 //        dd($sold);
 //        商品详情图片
         $det = Detail::select(Detail::$pic)

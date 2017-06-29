@@ -55,7 +55,7 @@
                 @foreach($gifts as $v)
                 <li>
                     <div class="imexc">
-                        <a title="{{$v->desc}}" href="{{$v->id}}">
+                        <a title="{{$v->desc}}" href="/shop/gift/li/{{$v->id}}">
                             <img alt="{{$v->name}}" src="/images/{{$v->icon}}" style="width: 304px; height: 304px">
                         </a>
                     </div>
@@ -70,42 +70,42 @@
             </ul>
         </div>
     </div>
-    <div class="shop_home_lis">
-        <div class="home_leading">
-            <h3><a href="shop/lift">生活馆</a></h3>
-        </div>
-        <div class="sh_second">
-            <ul>
-                @foreach($lifes as $v)
-                <li>
-                    <p>
-                        <a target="_blank" title="{{$v->name}}" href="{{$v->id}}">
-                            <img alt="{{$v->name}}" src="/images/{{$v->icon}}">
-                            <span class="title">{{$v->name}}</span>
-                        </a>
-                    </p>
-                </li>
-                @endforeach
-            </ul>
-            <dl>
-                @foreach($cates as $v)
-                    @if($v['path'] == "0.2.")
-                        <dt>
-                            <a target="_blank" title="{{$v['name']}}" href="{{$v['gid']}}" class="green">{{$v['name']}}</a>
-                        </dt>
-                        <dd>
-                            @foreach($cates as $vv)
-                            @if($vv['pid'] == $v['cid'])
-                            <a target="_blank" title="{{$vv['name']}}" href="{{$vv['gid']}}">{{$vv['name']}}</a>
-                                @endif
-                            @endforeach
-                        </dd>
-                        @endif
-                    @endforeach
-            </dl>
-        </div>
-    </div>
-    <div class="shop_flow">
+    {{--<div class="shop_home_lis">--}}
+        {{--<div class="home_leading">--}}
+            {{--<h3><a href="shop/lift">生活馆</a></h3>--}}
+        {{--</div>--}}
+        {{--<div class="sh_second">--}}
+            {{--<ul>--}}
+                {{--@foreach($lifes as $v)--}}
+                {{--<li>--}}
+                    {{--<p>--}}
+                        {{--<a target="_blank" title="{{$v->name}}" href="{{$v->id}}">--}}
+                            {{--<img alt="{{$v->name}}" src="/images/{{$v->icon}}">--}}
+                            {{--<span class="title">{{$v->name}}</span>--}}
+                        {{--</a>--}}
+                    {{--</p>--}}
+                {{--</li>--}}
+                {{--@endforeach--}}
+            {{--</ul>--}}
+            {{--<dl>--}}
+                {{--@foreach($cates as $v)--}}
+                    {{--@if($v['path'] == "0.2.")--}}
+                        {{--<dt>--}}
+                            {{--<a target="_blank" title="{{$v['name']}}" href="{{$v['gid']}}" class="green">{{$v['name']}}</a>--}}
+                        {{--</dt>--}}
+                        {{--<dd>--}}
+                            {{--@foreach($cates as $vv)--}}
+                            {{--@if($vv['pid'] == $v['cid'])--}}
+                            {{--<a target="_blank" title="{{$vv['name']}}" href="{{$vv['gid']}}">{{$vv['name']}}</a>--}}
+                                {{--@endif--}}
+                            {{--@endforeach--}}
+                        {{--</dd>--}}
+                        {{--@endif--}}
+                    {{--@endforeach--}}
+            {{--</dl>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<div class="shop_flow">--}}
         <h2 id="shop_waterfall_title" _size="12">好豆推荐</h2>
         <div class="shop_flowbox shop_waterfall_container" id="shop_waterfall_container">
             {{--生活馆--}}
@@ -121,9 +121,6 @@
                 </li>
             </ul>
             @endforeach
-            <div class="auto mgt20 pdb20 tc" style="" id="shop_waterfall_loading">
-                <img src="" alt="加载中..." class="vam">
-            </div>
         </div>
     </div>
 @endsection
