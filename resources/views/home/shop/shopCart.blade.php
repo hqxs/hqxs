@@ -27,11 +27,12 @@
             <tbody>
             @foreach($cart as $v)
             <tr>
+                <input type="hidden" value="{{$v->id}}">
                 <td class="col1">
-                    <a href="{{$v->id}}">
+                    <a href="/shop/gift/li{{$v->gid}}">
                         <img src="/images/{{$v->icon}}" alt="{{$v->desc}}" />
                     </a>
-                    <strong><a href="{{$v->id}}">{{$v->name}}</a>
+                    <strong><a href="/shop/gift/li{{$v->gid}}">{{$v->name}}</a>
                     </strong>
                 </td>
                 <td class="col2"> <p>{{$v->desc}}</p></td>
@@ -43,7 +44,7 @@
                     <a href="javascript:;" class="add_num">+</a>
                 </td>
                 <td class="col5">￥<span>{{$v->price * $v->count}}</span></td>
-                <td class="col6"><a href="">删除</a></td>
+                <td class="col6"><a href="javascript:;">删除</a></td>
             </tr>
             @endforeach
             <script>
@@ -81,7 +82,7 @@
                         var num = num - 1;
                         if (num <= 1)
                         {
-                            $(".amount").val(1);
+                            $(this).parent().find(".amount").val(1);
                             var num = num + 1;
                         }else if(num > store){
                             $(this).parent().find(".amount").val(store);
@@ -107,7 +108,28 @@
                     $(".col5 span").each(function () {
                         total += parseFloat($(this).html());
                     });
+                    // 总价
                    $("#total").html(total);
+                    //  删除
+                    $(".col6 a").click(function ()
+                    {
+                        var id = $(this).parent().parent().find("input").eq(0).val();
+//                        console.log(id);
+                        $.ajax({
+                            url:"/shop/cart/del/"+id,
+                            type:"get",
+                            success:function (respone,status,xhr){
+                               if (status) {
+                                   alert("删除成功,请刷新 ");
+                               }else {
+                                   alert("删除失败,请刷新收重试");
+                               }
+                            },
+                            error:function (message){
+                                console.log(message);
+                            }
+                        });
+                    });
                 });
             </script>
             </tbody>

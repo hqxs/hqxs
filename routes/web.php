@@ -19,8 +19,9 @@ Route::get("shop/gift/li/{id}","Home\ShopGiftListController@index");
 //投票系统ajax
 Route::get("/shop/gift2","Home\ShopGiftController@Up");
 //生活馆
-Route::get("shop/lift","Home\ShopLiftController@index");
+//Route::get("shop/lift","Home\ShopLiftController@index");
 
 //购物车
 Route::get("shop/cart/{id?}","Home\ShopCartController@index");
+Route::get("shop/cart/del/{id?}","Home\ShopCartController@del");
 
