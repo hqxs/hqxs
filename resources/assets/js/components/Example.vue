@@ -16,8 +16,13 @@
 
 <script>
     export default {
+<<<<<<< HEAD
         ready() {
             console.log('Component ready.')
+=======
+        mounted() {
+            console.log('Component mounted.')
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
         }
     }
 </script>

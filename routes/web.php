@@ -5,15 +5,22 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
+<<<<<<< HEAD
 | This file is where you may define all of the routes that are handled
 | by your application. Just tell Laravel the URIs it should respond
 | to using a Closure or controller method. Build something great!
+=======
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
 |
 */
 
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 Route::get('admin', function () {
     return view('admin/index');
@@ -75,3 +82,5 @@ Route::get('admin/login','Admin\IndexController@loginForm');
 Route::post('admin/doLogin','Admin\IndexController@doLogin');
 
 
+=======
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1

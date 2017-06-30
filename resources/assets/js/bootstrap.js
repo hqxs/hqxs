@@ -26,7 +26,11 @@ require('vue-resource');
  */
 
 Vue.http.interceptors.push((request, next) => {
+<<<<<<< HEAD
     request.headers['X-CSRF-TOKEN'] = Laravel.csrfToken;
+=======
+    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
 
     next();
 });

@@ -11,12 +11,20 @@
 |
 */
 
+<<<<<<< HEAD
+=======
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
         'name' => $faker->name,
+<<<<<<< HEAD
         'email' => $faker->safeEmail,
+=======
+        'email' => $faker->unique()->safeEmail,
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];

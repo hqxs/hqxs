@@ -12,7 +12,11 @@ return [
     | any other location as required by the application or its packages.
     */
 
+<<<<<<< HEAD
     'name' => 'My Application',
+=======
+    'name' => 'Laravel',
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
 
     /*
     |--------------------------------------------------------------------------
@@ -173,8 +177,13 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+<<<<<<< HEAD
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+=======
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -197,6 +206,10 @@ return [
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
+<<<<<<< HEAD
+=======
+        'Bus' => Illuminate\Support\Facades\Bus::class,
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,

@@ -52,11 +52,19 @@ return [
         'memcached' => [
             'driver' => 'memcached',
             'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
+<<<<<<< HEAD
             'sasl'       => [
                 env('MEMCACHED_USERNAME'),
                 env('MEMCACHED_PASSWORD'),
             ],
             'options'    => [
+=======
+            'sasl' => [
+                env('MEMCACHED_USERNAME'),
+                env('MEMCACHED_PASSWORD'),
+            ],
+            'options' => [
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
                 // Memcached::OPT_CONNECT_TIMEOUT  => 2000,
             ],
             'servers' => [

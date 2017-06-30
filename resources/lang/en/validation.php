@@ -16,11 +16,19 @@ return [
     'accepted'             => 'The :attribute must be accepted.',
     'active_url'           => 'The :attribute is not a valid URL.',
     'after'                => 'The :attribute must be a date after :date.',
+<<<<<<< HEAD
+=======
+    'after_or_equal'       => 'The :attribute must be a date after or equal to :date.',
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
     'alpha'                => 'The :attribute may only contain letters.',
     'alpha_dash'           => 'The :attribute may only contain letters, numbers, and dashes.',
     'alpha_num'            => 'The :attribute may only contain letters and numbers.',
     'array'                => 'The :attribute must be an array.',
     'before'               => 'The :attribute must be a date before :date.',
+<<<<<<< HEAD
+=======
+    'before_or_equal'      => 'The :attribute must be a date before or equal to :date.',
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
     'between'              => [
         'numeric' => 'The :attribute must be between :min and :max.',
         'file'    => 'The :attribute must be between :min and :max kilobytes.',
@@ -53,6 +61,10 @@ return [
         'array'   => 'The :attribute may not have more than :max items.',
     ],
     'mimes'                => 'The :attribute must be a file of type: :values.',
+<<<<<<< HEAD
+=======
+    'mimetypes'            => 'The :attribute must be a file of type: :values.',
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
@@ -80,6 +92,10 @@ return [
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
     'unique'               => 'The :attribute has already been taken.',
+<<<<<<< HEAD
+=======
+    'uploaded'             => 'The :attribute failed to upload.',
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
     'url'                  => 'The :attribute format is invalid.',
 
     /*

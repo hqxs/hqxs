@@ -15,7 +15,11 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
+<<<<<<< HEAD
                 font-family: 'Raleway';
+=======
+                font-family: 'Raleway', sans-serif;
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
@@ -68,8 +72,17 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+<<<<<<< HEAD
                     <a href="{{ url('/login') }}">Login</a>
                     <a href="{{ url('/register') }}">Register</a>
+=======
+                    @if (Auth::check())
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
+>>>>>>> b07241033d05bb0a6ea97d43a53abc38da370ec1
                 </div>
             @endif
 
