@@ -23,8 +23,8 @@ class IndexController extends Controller
 
     public function doLogin(Request $request)
     {
-//        Admin::create(['nmae'=>'admin','password'=>Hash::make('123456')]);
-//        return  '后台登录';
+        //Admin::create(['nmae'=>'admin','password'=>Hash::make('123456')]);
+        //return  '后台登录';
         if (Auth::guard('admin')->attempt(['name']=>$request->name,'password'=>$request->password))
         {
             return '登录成功';

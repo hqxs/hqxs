@@ -1,96 +1,59 @@
 @extends('admin.index')
 @section('main-content')
     <div class="main-content">
-      <form action="action.php?bz=add" method='post' enctype='multipart/form-data'>
+      <h2>添加分类</h2>
+      <form action="" method='post' enctype='multipart/form-data'>
         {{csrf_field()}}
-        <p>Name: <input type="text" name='name' placeholder='goods name'></p>
-        <p>Cid: 
-            <select name="cid">
-                <?php foreach ($list as $k => $v): ?>
-                    <?php 
-                        $count = substr_count($v['px'], ',');
-                        $nbsp = str_repeat('&nbsp;', ($count-2)*4);
-                     ?>
-                    <option value="<?= $v['id']?>"><?= $nbsp.$v['name']?></option>
-                <?php endforeach ?>
-            </select>
-        </p>
-        <p>Price: <input type="text" name='price' placeholder='price'></p>
-        <p>Store: <input type='text' name='store'></p>
-        <p>Sold: <input type='text' name='sold'></p>
-        <p>Up: 
-            <label><input type='radio' name='up' value='1' checked>上架</label>
-            <label><input type='radio' name='up' value='2'>下架</label>
-        </p>
-        <p>Hot: 
-            <label><input type='radio' name='hot' value='1' >热销</label>
-            <label><input type='radio' name='hot' value='2' checked>滞销</label>
-        </p>
-        <p><input type="submit" value="添加"></p>
-    </form>
-    <script src="/js/jquery-2.0.3.min.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-        $(function () {
-            var xml = ''
-            $.ajax({
-                url:'/admin/cateSelect',
-                type:'get',
-                async:false,
-                success:function (data) {
-                    console.log(data);
-                    xml = data;
-                    var pros = $(data).find('pid');
-                    //console.log(pros);
-                    pros.each(function () {
-                        var proId = $(this).attr('id');
-                        var proName = $(this).attr('name');
-                        //console.log(proName);
-                        $("#province").append("<option value="+proId+">"+proName+"</option>");
-                    });
-                },
-            })
-            // $("#province").change(function () {
-            //     $("#city").show();
-            //     $("#piecearea").show();
-            //     $("#city").empty();
-            //     var index = $(this).val().substr(0,2);
-            //     //console.log(index);
-            //     var citys = $(xml).find('City[CityID^='+index+']');
-            //     if (citys.length == 0)
-            //     {
-            //         $("#city").hide();
-            //         $("#piecearea").hide();
-            //         return;
-            //     }
-            //     citys.each(function () {
-            //         var cityId = $(this).attr('CityID');
-            //         var cityName = $(this).attr('City');
-            //         $("#city").append("<option value="+cityId+">"+cityName+"</option>");
-            //     });
-            //     $("#city").trigger('change');
-            // });
+      
+		<div style="position:absolute;border:1pt solid #c1c1c1;overflow:hidden;width:188px;height:19px;clip:rect(-1px 190px 190px 170px);top: 50px"> 
+			<select name="foo" id="foo1" style="width:190px;height:20px;margin:-2px;" onChange="javascript:document.getElementById('goo1').value=document.getElementById('foo1').options[document.getElementById('foo1').selectedIndex].value;">
+				<option value="" style="color:#c2c2c2;">---请选择---</option>
+				<option value="">1</option> 
+				<option value="">2</option> 
+				<option value="">3</option> 
+				<option value="">4</option> 
+			</select> 
+		</div> 
+		<div style="position:absolute;border-top:1pt solid #c1c1c1;border-left:1pt solid #c1c1c1;border-bottom:1pt solid #c1c1c1;width:170px;height:19px;top: 50px"> 
+			<input type="text" name="goo" id="goo1" value="" style="width:170px;height:15px;border:0pt;"> 
+		</div> 	
 
-            // $("#city").change(function () {
-            //     $("#piecearea").show();
-            //     $("#piecearea").empty();
-            //     var index = $(this).val().substr(0,4);
-            //     //console.log(index);
-            //     var pies = $(xml).find('Piecearea[PieceareaID^='+index+']');
-            //     console.log(pies);
-            //     if (pies.length == 0)
-            //     {
-            //         $("#piecearea").hide();
-            //         return;
-            //     }
-            //     pies.each(function () {
-            //         var pieId = $(this).attr('PieceareaID');
-            //         var pieName = $(this).attr('Piecearea');
-            //         $("#piecearea").append("<option value="+pieId+">"+pieName+"</option>");
-            //     });
-            // });
+		
+<div style="position:absolute;border:1pt solid #c1c1c1;overflow:hidden;width:188px;height:19px;clip:rect(-1px 190px 190px 170px);top: 100px"> 
+			<select name="foo" id="foo2" style="width:190px;height:20px;margin:-2px;" onChange="javascript:document.getElementById('goo2').value=document.getElementById('foo2').options[document.getElementById('foo2').selectedIndex].value;">
+				<option value="" style="color:#c2c2c2;">---请选择---</option>
+				<option value="">1</option> 
+				<option value="">2</option> 
+				<option value="">3</option> 
+				<option value="">4</option> 
+			</select> 
+		</div> 
+		<div style="position:absolute;border-top:1pt solid #c1c1c1;border-left:1pt solid #c1c1c1;border-bottom:1pt solid #c1c1c1;width:170px;height:19px;top: 100px"> 
+			<input type="text" name="goo" id="goo2" value="" style="width:170px;height:15px;border:0pt;"> 
+		</div> 		
 
-            // $("#province").trigger('change');
-            // $("#city").trigger('change');
-        })
-    </script>
+
+
+		
+
+
+<div style="position:absolute;border:1pt solid #c1c1c1;overflow:hidden;width:188px;height:19px;clip:rect(-1px 190px 190px 170px);top: 150px"> 
+			<select name="foo" id="foo3" style="width:190px;height:20px;margin:-2px;" onChange="javascript:document.getElementById('goo3').value=document.getElementById('foo3').options[document.getElementById('foo3').selectedIndex].value;">
+				<option value="" style="color:#c2c2c2;">---请选择---</option>
+				<option value="">1</option> 
+				<option value="">2</option> 
+				<option value="">3</option> 
+				<option value="">4</option> 
+			</select> 
+		</div> 
+		<div style="position:absolute;border-top:1pt solid #c1c1c1;border-left:1pt solid #c1c1c1;border-bottom:1pt solid #c1c1c1;width:170px;height:19px;top: 150px"> 
+			<input type="text" name="goo" id="goo3" value="" style="width:170px;height:15px;border:0pt;"> 
+		</div> 		
+
+
+
+
+
+		<input type="submit" value="添加" style="position: absolute;top: 200px">	
+	</form>	
 @stop

@@ -31,6 +31,7 @@ Route::post('/admin/goods/upload/{id}','Admin\GoodsController@upload');
 
 Route::get('/admin/goods/imgedit/{id}','Admin\GoodsController@imgedit');
 
+//商品分类
 Route::get('/admin/cateadd','Admin\Goods_cateController@cateAdd');
 
 Route::get('/admin/cateSelect','Admin\Goods_cateController@cateSelect');
@@ -40,6 +41,22 @@ Route::get('/admin/catetory','Admin\Goods_cateController@catetory');
 //Route::post('/admin/goods/update',function () {
 //    return '修改数据';
 //});
+//
+//订单信息页面
+Route::get('/admin/order','Admin\OrderController@list');
+Route::get('/admin/order/delete/{id}','Admin\OrderController@delete');
+Route::get('/admin/order/edit/{id}','Admin\OrderController@edit');
+Route::get('/admin/order','Admin\OrderController@list');
+
+//地址
+Route::get('/admin/addr','Admin\AddrController@list');
+Route::get('/admin/addr/edit/{id}','Admin\AddrController@edit');
+Route::get('/admin/addredit','Admin\AddrController@addredit');
+
+
+//商品详情页
+Route::get('/admin/goods/detail','Admin\Goods_detailController@list');
+
 
 
 //Route::get('admin','Admin\IndexController@index');

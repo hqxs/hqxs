@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Life_image extends Model
+class Addr extends Model
 {
     public $timestamps = false;
-	// protected $guarded = ['updated_at'];
 }

@@ -29,10 +29,10 @@ class GoodsController extends Controller
     public function update(Request $request,$id)
     {
         echo $id;
-       $data = $request->all();
-       var_dump($data);
-       $goods = Goods_gift::find($id);
-       $goods->name = $data['name'];
+        $data = $request->all();
+        var_dump($data);
+        $goods = Goods_gift::find($id);
+        $goods->name = $data['name'];
         $goods->price = $data['price'];
         $goods->desc = $data['desc'];
         $goods->isReserve = $data['isReserve'];
