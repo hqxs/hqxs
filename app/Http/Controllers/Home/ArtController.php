@@ -19,6 +19,7 @@ class ArtController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -113,7 +114,7 @@ class ArtController extends Controller
         if($re){
             return redirect('group/'.$id);
         }else{
-            $error = '服务器忙请稍后...';
+            $error = '无删改!';
             return back()->with('sim',$error);
         }
     }
@@ -126,12 +127,12 @@ class ArtController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        $aid = DB::table('article')->join('cate','cate_id','art_xz')->where('art_id',$id)->select('cate_id')->get()->first()->cate_id;
         $re = Article::where('art_id',$id)->delete();
         if($re){
-           return ;
+        return $aid;
         }else{
-            return "删除失败";
+            return 0;
         }
     }
 }

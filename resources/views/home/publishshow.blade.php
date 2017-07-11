@@ -1,146 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>{{$data->art_title}}_{{$data->cate_name}}_好豆网</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Cache-Control" content="no-transform"/>
-    <meta name="Keywords" content="f" />
-    <meta name="Description" content="f" />
-    <meta http-equiv="mobile-agent" content="format=html5; url=http://m.haodou.com/topic-522809.html">
-    <link rel="stylesheet" type="text/css" href="/css/publish1.css" />
-    <script type="text/javascript" src="/js/publish.js"></script>
-    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/js/publish1.js"></script>
-</head>
-
-<body>
-<div class="status_space">&nbsp;</div>
-<div class="new_status clearfix">
-    <div class="warpb clearfix" id="hd_head">
-        <div class="fl">
-            <a href="http://www.haodou.com/">好豆网</a> |
-            <a href="http://www.haodou.com/recipe">菜谱</a> |
-            <a href="http://group.haodou.com/" class="sel">广场</a> |
-            <a href="http://shop.haodou.com" rel="nofollow">商城</a> |
-            <a href="http://www.haodou.com/topic/home">精选专题</a> |
-            <a href="http://www.haodou.com/help/mobile.php" rel="nofollow">应用</a>
-        </div>
-        <div class="fr area_ct">
-            <div class="uid_center fr" data-toggle="user">
-				<span class="ctrl">
-					<a class="tab_link" href="http://www.haodou.com/cook-10673352/">
-						<span class="inner">
-							<img src="http://avatar0.hoto.cn/c8/dc/10673352_22.jpg" class="pto noevent" alt="" style="height: 22px; width: 22px;"/>
-							<span class="angle_down">{{$data->name}}</span><i class="ico12 arrdown">&nbsp;</i>
-						</span>
-					</a>
-				</span>
-                <div class="sub_box">
-                    <a href="http://www.haodou.com/cook-10673352/recipe/"><i class="ico20 icon_recipe"></i>我的菜谱</a>
-                    <a href="http://www.haodou.com/cook-10673352/topic/"><i class="ico20 icon_talk"></i>我的话题</a>
-                    <a href="http://shop.haodou.com/my.php" title=""><i class="ico20 icon_wealth"></i>我的豆币</a>
-                    <a href="http://wo.haodou.com/settings.php?do=sync" title=""><i class="ico20 icon_bind"></i>同步分享</a>
-                    <a href="http://wo.haodou.com/settings.php" title=""><i class="ico20 icon_set"></i>个人设置</a>
-                    <a href="http://login.haodou.com?do=logout"><i class="ico20 icon_quit"></i>退出</a>
-                </div>
-            </div>
-            <span class="fr line">|</span>
-            <div class="messages fr" data-toggle="notice">
-				<span class="ctrl">
-					<a class="tab_link" href="http://wo.haodou.com/user/message.php">
-						<span class="inner">
-							消息(<b class="num">4</b>)<i class="ico12 arrdown">&nbsp;</i>						</span>
-					</a>
-				</span>
-                <div class="sub_box">
-                    <div class="option clearfix">加载中...</div>
-                </div>
-            </div>
-            <span class="fr line">|</span>
-
-            <a class="fr tab_link glodpd" title="等级" href="http://wo.haodou.com/settings.php?do=level" target="_blank">
-				<span class="inner">
-					<span class="angle_down">等级: 新手</span>
-				</span>
-            </a>
-            <span class="fr line">|</span>
-
-            <div class="sign_in fr" data-toggle="sign">
-				<span class="ctrl">
-					<a class="tab_link" href="javascript://">
-												<span class="sbtn btn_orange cm" id="hd_sign">签到</span>
-											</a>
-				</span>
-                <div class="sub_box gray9">
-                    加载中...
-                </div>
-            </div>
-            <span class="fr line">|</span>
-
-            <a class="fr tab_link glodpd" title="豆币" href="http://shop.haodou.com/my.php" target="_blank">
-				<span class="inner">
-					<span class="angle_down">豆币: <span id="hd_wealth">2</span></span>
-				</span>
-            </a>
-            <span class="fr line">|</span>
-
-            <div class="quick_pub fr" data-toggle="publish">
-				<span class="ctrl">
-					<a class="tab_link" href="javascript://">
-						<span class="inner"><span class="angle_down">快速发布</span><i class="ico12 arrdown">&nbsp;</i></span>
-					</a>
-				</span>
-                <div class="sub_box">
-                    <a href="http://www.haodou.com/recipe/create" rel="nofollow"><i class="ico20 icon_recipe"></i>发布菜谱</a>
-                    <a href="http://www.haodou.com/recipe/album/create.php" rel="nofollow"><i class="ico20 icon_featur"></i>创建专辑</a>
-                    <a href="http://wo.haodou.com/topic.php?do=Publish" rel="nofollow"><i class="ico20 icon_topic"></i>发表话题</a>
-                    <!--<a href="http://wo.haodou.com/diary.php?do=Publish" rel="nofollow"><i class="ico20 icon_diary"></i>发表豆记</a>-->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="def_header clearfix">
-    <div class="warpb clearfix">
-        <div class="row def_pad_td">
-
-            <div class="logo"><a href="http://group.haodou.com/" title="好豆广场"><img class="pn" src="http://www.haodou.com/public/images3/logo_group.jpg" alt="好豆广场" /></a><img src="//www.haodou.com/public/images3/logo_vice_index.jpg" alt="爱生活 爱美食" /></div>
-
-            <div id="hd_search" class="xsearch" data-mod='topic'>
-                <div id="hd_search_set" class="append_mode">
-                    <span class="nested"><span class="gray6">话题</span><i class="ico12 arr">&nbsp;</i></span>
-                    <p class="area_list" style="display:none">
-                        <a href="javascript://" data-mod='recipe'>菜谱</a>
-                        <a href="javascript://" data-mod='collect'>专辑</a>
-                        <a href="javascript://" data-mod='topic'>话题</a>
-                        <a href="javascript://" data-mod='user'>豆友</a>
-                    </p>
-                </div>
-                <input id="hd_search_txt" class="xsearch_inp" name="xsearch_txt" type="text" />
-                <a class="xsearch_btn" href="javascript://" title="搜索"><i class="ico20 srh">&nbsp;</i>搜索</a>
-            </div>
-            <div class="xsearch_tag">
-                <a href="http://www.haodou.com/s?wd=%25E5%2587%258F%25E8%2582%25A5&tp=recipe&from=head"  target="_blank" title="减肥">减肥</a>
-                <a href="http://www.haodou.com/s?wd=%25E6%2597%25A9%25E9%25A4%2590&tp=recipe&from=head"  target="_blank" title="早餐">早餐</a>
-                <a href="http://www.haodou.com/s?wd=%25E9%259D%25A2%25E9%25A3%259F&tp=recipe&from=head"  target="_blank" title="面食">面食</a>
-                <a href="http://www.haodou.com/s?wd=%25E5%2585%25BB%25E8%2583%2583&tp=recipe&from=head"  target="_blank" title="养胃">养胃</a>
-            </div>
-
-        </div>
-    </div>
-    <div class="main_mu_bar">
-        <div class="warpb clearfix">
-            <div class="row">
-                <div class="site_menu">
-                    <a  class="sel" href="http://group.haodou.com/" title="广场">广场</a>
-                    <a  href="http://www.haodou.com/act/home" title="活动">活动</a>
-                    <a  href="http://group.haodou.com/expert" title="生活盟主">生活盟主</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
+@extends('layouts.master')
+@section('title', $data->cate_title)
+@section('name', $data->cate_name)
+@section('content')
 
 <div class="warp_shell clearfix">
     <div class="shell_up"></div>
@@ -160,13 +21,13 @@
                             <p class="mgb5">
                                 <span class="manage">
                                     <a class="tab" title="" href="#__cmt_content_comment">回复(0)</a>
-                                                                        <span class="line">|</span>
+                                    <span class="line">|</span>
                                     <span class="list tab" title="">
                                         <span>管理话题 <i style="background-position: 0px -1275px;"></i></span>
-                                            <span class="sub_menu" style="display: none;">
+                                        <span class="sub_menu" style="display: none;">
                                                 <a href="{{url('group/'.$data->art_id.'/edit')}}">编辑</a> <br/>
  											    <a id="del" href="javascript:void(0);">删除</a>
-                                            </span>
+                                        </span>
                                     </span>
                                 </span>
                                 <a class="mgr10" title="" href="http://wo.haodou.com/10673352/">{{$data->name}}</a>                                                                                            </p>
@@ -440,8 +301,6 @@
         <dl class="xf_box">
             <dt>关注好豆</dt>
             <dd>
-
-
                 <div class="frame"><iframe src="about:blank" allowtransparency="true" scrolling="no" border="0" frameborder="0" original="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1770277210&style=1&btn=light&dpc=1"></iframe></div>
             </dd>
         </dl>
@@ -523,9 +382,15 @@
         var html = '<div id="_comfrim" style="position: fixed; left: 386.5px; top: 259.5px; z-index: 20000;"><div class="public_elastic_layer"><dl><dt class="f14 b" style="cursor: move;"><a href="javascript://" class="ico20 popclose">&nbsp;</a><span mod="title">好豆网温馨提示</span></dt><dd><p class="f14" mod="content" style="text-align:center">确定删除该话题？删除后不能恢复哦！</p></dd><dd class="atn tc"><a href="javascript://"  class="dbtn btn_green">确定</a><a href="javascript://" mod="cancel" class="dbtn btn_gray" style="margin-left:15px">取消</a></dd></dl></div></div><div style="position: absolute; left: 0px; top: 0px; width: 100%; z-index: 19990; background: rgb(0, 0, 0); opacity: 0.5; height: 2238px;"></div>';
         $('#flo').html(html);
         $('.btn_green').click(function(){
-            $.post("{{url('group')}}/47" ,{'_method':'delete','_token':'{{csrf_field()}}'},function(data){
-                alert(data);
+            $.post("{{url('/group')}}/"+{{$data->art_id}} ,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+                if(data == 0){
+                    alert('删除失败！')
+                }else{
+                    window.location.href = '/grouplist/'+ data
+                }
             });
+            var html = '';
+            $('#flo').html(html);
         });
 
         $('.btn_gray').click(function(){
@@ -536,3 +401,4 @@
 </script>
 </body>
 </html>
+@endsection

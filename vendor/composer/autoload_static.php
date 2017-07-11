@@ -273,6 +273,13 @@ class ComposerStaticInite81d4b6461f93cf37fd1a7dbee8a6c9d
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
             ),
         ),
+        'C' => 
+        array (
+            'Curl' => 
+            array (
+                0 => __DIR__ . '/..' . '/curl/curl/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -283,10 +290,15 @@ class ComposerStaticInite81d4b6461f93cf37fd1a7dbee8a6c9d
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Home\\ArtController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/ArtController.php',
+        'App\\Http\\Controllers\\Home\\PubController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/PubController.php',
+        'App\\Http\\Controllers\\Home\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Model\\Article' => __DIR__ . '/../..' . '/app/Model/Article.php',
+        'App\\Model\\Category' => __DIR__ . '/../..' . '/app/Model/Category.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -323,6 +335,7 @@ class ComposerStaticInite81d4b6461f93cf37fd1a7dbee8a6c9d
         'Cron\\MinutesField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MonthField.php',
         'Cron\\YearField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/YearField.php',
+        'Curl\\Curl' => __DIR__ . '/..' . '/curl/curl/src/Curl/Curl.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',

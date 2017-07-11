@@ -24,6 +24,5 @@ class UserController extends Controller
         session(['phone'=> $date['phone']]);
         session(['id'=> $id]);
         session(['password'=> $date['password']]);
-        dd(session('id'));
     }
 }
