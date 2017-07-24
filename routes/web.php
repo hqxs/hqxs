@@ -12,8 +12,15 @@
 */
 
 //登录
-Route::get('login','Home\UserController@index');
-Route::get('login/user','Home\UserController@login');
+Route::get('login','Home\UserController@login');
+Route::post('dologin','Home\UserController@doLogin');
+Route::get('outLogin','Home\UserController@outLogin');
+
+//注册
+Route::get('register','Home\UserController@register');
+Route::post('doregister','Home\UserController@doRegister');
+Route::get('/user/phone','Home\PubController@phone');
+
 
 //广场首页
 Route::get('group_index','Home\PubController@index');
@@ -59,6 +66,15 @@ Route::get('/groups/user/{id}','Home\PubController@user');
 
 //天气
 Route::get('/groups/weather','Home\PubController@weather');
+
+
+
+//======================================================================================================
+//后台
+Route::get('/admin/login','Admin\AdminController@loginForm');
+Route::post('/admin/dologin','Admin\AdminController@doLogin');
+
+
 
 
 

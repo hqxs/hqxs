@@ -28,12 +28,7 @@
 <div class="new_status clearfix">
     <div class="warpb clearfix" id="hd_head">
         <div class="fl">
-            <a href="http://www.haodou.com/">好豆网</a> |
-            <a href="http://www.haodou.com/recipe">菜谱</a> |
-            <a href="{{url('http://hd.com/group_index')}}">广场</a> |
-            <a href="http://shop.haodou.com" rel="nofollow">商城</a> |
-            <a href="http://www.haodou.com/topic/home">精选专题</a> |
-            <a href="http://www.haodou.com/help/mobile.php" rel="nofollow">应用</a>
+            <a href="{{url('/group_index')}}" target="_blank">广场</a>
         </div>
         <div class="fr area_ct">
             <div class="uid_center fr" data-toggle="user">
@@ -103,7 +98,7 @@
                 <div class="sub_box">
                     <a href="http://www.haodou.com/recipe/create" rel="nofollow"><i class="ico20 icon_recipe"></i>发布菜谱</a>
                     <a href="http://www.haodou.com/recipe/album/create.php" rel="nofollow"><i class="ico20 icon_featur"></i>创建专辑</a>
-                    <a href="http://wo.haodou.com/topic.php?do=Publish" rel="nofollow"><i class="ico20 icon_topic"></i>发表话题</a>
+                    <a href="{{url('group/create')}}" rel="nofollow"><i class="ico20 icon_topic"></i>发表话题</a>
                     <!--<a href="http://wo.haodou.com/diary.php?do=Publish" rel="nofollow"><i class="ico20 icon_diary"></i>发表豆记</a>-->
                 </div>
             </div>
@@ -263,7 +258,7 @@
                         <dl class=" ">
                             <dt>
                                 <i>&nbsp;</i>
-                            <h3><a title="121" href="http://group.haodou.com/topic-523426.html">{{$v->art_title}}</a></h3>
+                            <h3><a title="121" href="{{url('http://hd.com/group/'.$v->art_id)}}">{{$v->art_title}}</a></h3>
                             <i class="ico20 icoPos6"> </i>
                             </dt>
                             <dd class="wd1">

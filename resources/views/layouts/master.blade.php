@@ -52,7 +52,6 @@
                 from = (from < 0) ? Math.ceil(from) : Math.floor(from);
                 if (from < 0)
                     from += len;
-
                 for (; from < len; from++)
                 {
                     if (from in this && this[from] === elt)
@@ -69,21 +68,14 @@
 <div class="status_space">&nbsp;</div>
 <div class="new_status clearfix">
     <div class="warpb clearfix" id="hd_head">
-        <div class="fl">
-            <a href="http://www.haodou.com/">好豆网</a> |
-            <a href="http://www.haodou.com/recipe">菜谱</a> |
-            <a href="{{url('/group_index')}}" class="sel">广场</a> |
-            <a href="http://shop.haodou.com" rel="nofollow">商城</a> |
-            <a href="http://www.haodou.com/topic/home">精选专题</a> |
-            <a href="http://www.haodou.com/help/mobile.php" rel="nofollow">应用</a>
-        </div>
+        @if (!empty(session('id')))
         <div class="fr area_ct">
             <div class="uid_center fr" data-toggle="user">
 				<span class="ctrl">
 					<a class="tab_link" href="http://www.haodou.com/cook-10673352/">
 						<span class="inner">
 							<img src="http://avatar0.hoto.cn/c8/dc/10673352_22.jpg" class="pto noevent" alt="" style="height: 22px; width: 22px;"/>
-							<span class="angle_down">sjs</span><i class="ico12 arrdown">&nbsp;</i>
+							<span class="angle_down">{{session('name')}}</span><i class="ico12 arrdown">&nbsp;</i>
 						</span>
 					</a>
 				</span>
@@ -93,7 +85,7 @@
                     <a href="http://shop.haodou.com/my.php" title=""><i class="ico20 icon_wealth"></i>我的豆币</a>
                     <a href="http://wo.haodou.com/settings.php?do=sync" title=""><i class="ico20 icon_bind"></i>同步分享</a>
                     <a href="{{url('/groups/user/'.session('id'))}}" title=""><i class="ico20 icon_set"></i>个人设置</a>
-                    <a href="http://login.haodou.com?do=logout"><i class="ico20 icon_quit"></i>退出</a>
+                    <a href="{{url('/outLogin')}}"><i class="ico20 icon_quit"></i>退出</a>
                 </div>
             </div>
             <span class="fr line">|</span>
@@ -150,13 +142,42 @@
                 </div>
             </div>
         </div>
+        @else
+        <div class="fr area_ct">
+            <div class="befor_login fr fans_act">
+				<span class="tabrow">
+					&nbsp;您尚未登录，请
+					<a href="{{url('/login')}}" class="green" rel="nofollow">登录</a> 或
+					<a href="{{url('/register')}}" class="green" rel="nofollow">注册</a>
+					<a class="login_vbn" href="http://login.haodou.com/call.php?do=connect&site=6&action=bind&product=1&is_new=1" rel="nofollow"><i class="ico20 login_qq">&nbsp;</i>QQ登录</a>
+					<a class="login_vbn" href="http://login.haodou.com/call.php?do=connect&site=3&action=bind&product=1&is_new=1" rel="nofollow"><i class="ico20 login_sina">&nbsp;</i>微博登录</a>
+				</span>
+            </div>
+            <span class="fr line">|</span>
+
+
+            <div class="quick_pub fr" data-toggle="publish">
+				<span class="ctrl">
+					<a class="tab_link" href="javascript://">
+						<span class="inner"><span class="angle_down">快速发布</span><i class="ico12 arrdown">&nbsp;</i></span>
+					</a>
+				</span>
+                <div class="sub_box">
+                    <a href="http://www.haodou.com/recipe/create" rel="nofollow"><i class="ico20 icon_recipe"></i>发布菜谱</a>
+                    <a href="http://www.haodou.com/recipe/album/create.php" rel="nofollow"><i class="ico20 icon_featur"></i>创建专辑</a>
+                    <a href="http://wo.haodou.com/topic.php?do=Publish" rel="nofollow"><i class="ico20 icon_topic"></i>发表话题</a>
+                    <!--<a href="http://wo.haodou.com/diary.php?do=Publish" rel="nofollow"><i class="ico20 icon_diary"></i>发表豆记</a>-->
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
 </div>
 <div class="def_header clearfix">
     <div class="warpb clearfix">
         <div class="row def_pad_td">
 
-            <div class="logo"><a href="http://group.haodou.com/" title="好豆广场"><img class="pn" src="http://www.haodou.com/public/images3/logo_group.jpg" alt="好豆广场" /></a><img src="//www.haodou.com/public/images3/logo_vice_index.jpg" alt="爱生活 爱美食" /></div>
+            <div class="logo"><a href="{{url('/group_index')}}" title="好豆广场"><img class="pn" src="http://www.haodou.com/public/images3/logo_group.jpg" alt="好豆广场" /></a><img src="//www.haodou.com/public/images3/logo_vice_index.jpg" alt="爱生活 爱美食" /></div>
 
             <div id="hd_search" class="xsearch" data-mod='topic'>
                 <div id="hd_search_set" class="append_mode">
@@ -184,7 +205,7 @@
         <div class="warpb clearfix">
             <div class="row">
                 <div class="site_menu">
-                    <a  class="sel" href="http://group.haodou.com/" title="广场">广场</a>
+                    <a  class="sel" href="{{url('/group_index')}}" title="广场">广场</a>
                     <a  href="http://www.haodou.com/act/home" title="活动">活动</a>
                     <a  href="http://group.haodou.com/expert" title="生活盟主">生活盟主</a>
                 </div>

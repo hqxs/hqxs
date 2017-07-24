@@ -2,11 +2,19 @@
 @section('title', $cate->cate_title)
 @section('name', $cate->cate_name)
 @section('content')
+<script>
+    $(function(){
+        $('#artlist').click(function(){
+            alert('请先登录！');
+            window.location.href="/login";
+        })
+    })
+</script>
 <div class="warp_shell clearfix">
     <div class="shell_up"></div>
     <div class="shell_mc clearfix">
         <div class="area_main">
-            <div class="ftst mgb10"><a href="http://group.haodou.com/" title="广场">广场</a> &gt; {{$cate->cate_name}}</div>
+            <div class="ftst mgb10"><a href="{{url('/group_index')}}" title="广场">广场</a> &gt; {{$cate->cate_name}}</div>
             <div class="forum_intro">
                 <ul class="img_text">
                     <li>
@@ -50,8 +58,12 @@
             </div>
 
             <h2 class="dhead mgb10" id="group_dhead_pos">
-                <a href="{{url('group/create')}}" title="发表话题" class="btn_basic btn_d fr">发表话题</a>                                        <a href="http://group.haodou.com/32/" title="全部" class="sel">全部</a>
-                <a href="http://group.haodou.com/32/?digest#digest" title="精华" class="">优帖</a>
+                 @if (!empty(session('id')))
+                    <a href="{{url('group/create')}}" title="发表话题" class="btn_basic btn_d fr">发表话题</a>
+                 @else
+                    <a href="#" title="发表话题" class="btn_basic btn_d fr" id="artlist">发表话题</a>
+                @endif
+                    <a href="http://group.haodou.com/32/" title="全部" class="sel">全部</a>
             </h2>
 
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="posts_list">
@@ -59,21 +71,17 @@
                     <th width="54%" class="title"><span class="mgl20">标题</span></th>
                     <th width="16%"> <a href="http://group.haodou.com/32/?order=publish_d" class="gray3">发表人/时间<span class="sort_down_gray"></span></a></th>
                     <th width="14%">浏览/回复</th>
-                    {{--<th width="16%"><a href="http://group.haodou.com/32/?order=reply_a" class="gray3">回复人/时间<span class="sort_down_orange"></span></a></th>--}}
                 </tr>
                 @foreach ($data as $v)
                 <tr  class="bg" >
                     <td class="title b2">
-                        <span class="top"></span><a href="{{url('/aloneshow/'.$v->art_id)}}" title="{{$v->art_title}}" class="t orange" target="_blank">{{$v->art_title}}</a><span class="img"></span><span class="huo"></span>	                    </td>
+                        <span class="top"></span><a href="{{url('/aloneshow/'.$v->art_id)}}" title="{{$v->art_title}}" class="t orange" target="_blank">{{$v->art_title}}</a><span class="img"></span><span class="huo"></span>
+                    </td>
                     <td class="b2">
                         <a href="http://wo.haodou.com/3690/" title="{{$v->name}}" target="_blank">{{$v->name}}</a>
-                        <p class="gray9">{{$v->name}}</p>
+                        <p class="gray9">{{$v->art_time}}</p>
                     </td>
                     <td class="b2"><span>9301/41</span></td>
-                    {{--<td class="b2">--}}
-                        {{--<a href="http://wo.haodou.com/511340/" title="柔蓝水晶" target="_blank">柔蓝水晶</a><br />--}}
-                        {{--<span class="gray9">06-29 23:52</span>--}}
-                    {{--</td>--}}
                 </tr>
                 @endforeach
             </table>

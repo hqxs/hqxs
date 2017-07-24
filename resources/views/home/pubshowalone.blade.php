@@ -57,15 +57,26 @@
             });
         })
     </script>
-
+    <script>
+        $(function(){
+            $('.log').click(function(){
+                alert('请先登录！');
+                window.location.href="/login";
+            })
+        })
+    </script>
 <div class="warp_shell clearfix">
     <div class="shell_up"></div>
     <div class="shell_mc clearfix">
         <div class="area_main" id="topic-content">
             <div id="global_topic_is_pai_content" _value="" style="display: none;"></div> <!-- common.js显示左侧二维码（去哪吃的话题） -->
-            <div class="ftst mgb10"><a href="http://group.haodou.com/">广场</a> &gt; <a href="http://group.haodou.com/32/">{{$data->cate_name}}</a> &gt; {{$data->art_title}}</div>
+            <div class="ftst mgb10"><a href="{{url('/group_index')}}">广场</a> &gt; <a href="{{url('grouplist/'.$data->cate_id)}}">{{$data->cate_name}}</a> &gt; {{$data->art_title}}</div>
             <div class="main_t mgb10">
-                <a class="btn_basic btn_d fr" title="发表话题" href="{{url('group/create')}}">发表话题</a>
+                @if (!empty(session('id')))
+                    <a href="{{url('group/create')}}" title="发表话题" class="btn_basic btn_d fr">发表话题</a>
+                @else
+                    <a href="#" title="发表话题" class="btn_basic btn_d fr log">发表话题</a>
+                @endif
                 <?php $p = 0?>
                 @foreach($coll as $v)
                     @if(($v->coll_uid) == session('id'))
@@ -75,7 +86,11 @@
                     @endif
                 @endforeach
                 @if($p == 0)
+                    @if (!empty(session('id')))
                     <a class="btn_basic btn_j fr mgr10 fav_btn" id="coll" href="javascript:///">加入收藏</a>
+                    @else
+                    <a href="#" class="btn_basic btn_j fr mgr10 fav_btn log">加入收藏</a>
+                    @endif
                 @endif
             </div>
             <div class="f_article f_article_bg">
@@ -97,7 +112,11 @@
                                     @endif
                                 @endforeach
                                 @if($a == 0)
+                                    @if (!empty(session('id')))
                                     <a href="javascript:///" id="foll" class="care_of"><b class="orange">+</b>关注</a>
+                                    @else
+                                    <a href="javascript:///"class="care_of log"><b class="orange">+</b>关注</a>
+                                    @endif
                                 @endif
                             </p>
                             <p>
@@ -105,7 +124,8 @@
                                 <span class="gray9 mgr10">浏览数:9528</span>
                             </p>
                         </div>
-                        <span class="mark_jing"></span>                    </div>
+                        <span class="mark_jing"></span>
+                    </div>
                     <div class="main_text">
                         <p>{!! $data->art_content !!}</p>
                         <div class="act_btns tc ft12 cb">
@@ -290,7 +310,7 @@
                     <li>
                         <a class="img" title="烘焙甜点" href="http://group.haodou.com/32/"><img alt="烘焙甜点"   src="http://img4.hoto.cn/res/images/public/group/32.jpg?v=2" style="width: 70px"></a>
                         <div class="text">
-                            <h1><a class="gray3" href="http://group.haodou.com/32/">{{$data->cate_name}}</a></h1>
+                            <h1><a class="gray3" href="{{url('grouplist/'.$data->cate_id)}}">{{$data->cate_name}}</a></h1>
                             <p class="gray9">创建时间:2015-06-24</p>
                             <p class="gray9">话题数： 15868</p>
                         </div>

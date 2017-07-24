@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Model\Category;
+use App\Model\User;
 use Curl\Curl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -218,5 +219,17 @@ class PubController extends Controller
             }
         }
         return $arr;
+    }
+
+    //手机号数据库验证是否存在
+    public function phone()
+    {
+        $num = $_GET['num'];
+        $re = User::where('phone',$num)->get()->first();
+        if(!empty($re)){
+            return 1;
+        }else{
+            return 2;
+        }
     }
 }

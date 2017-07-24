@@ -10,7 +10,7 @@
             <div id="global_topic_is_pai_content" _value="" style="display: none;"></div> <!-- common.js显示左侧二维码（去哪吃的话题） -->
             <div class="ftst mgb10"><a href="http://group.haodou.com/">广场</a> &gt; <a href="http://group.haodou.com/6/">{{$data->cate_name}}</a> &gt;{{$data->art_title}}</div>
             <div class="main_t mgb10">
-                <a class="btn_basic btn_d fr" title="发表话题" href="http://wo.haodou.com/topic.php?do=publish&cid=6">发表话题</a>                            </div>
+                <a class="btn_basic btn_d fr" title="发表话题" href="{{url('group/create')}}">发表话题</a>                            </div>
             <div class="f_article f_article_bg">
                 <h1 class="article_title posts_list">{{$data->art_title}}</h1>                <div id="article_cont" class="detail" >
                     <div class="about clearfix">
@@ -20,8 +20,6 @@
                         <div class="text">
                             <p class="mgb5">
                                 <span class="manage">
-                                    <a class="tab" title="" href="#__cmt_content_comment">回复(0)</a>
-                                    <span class="line">|</span>
                                     <span class="list tab" title="">
                                         <span>管理话题 <i style="background-position: 0px -1275px;"></i></span>
                                         <span class="sub_menu" style="display: none;">
@@ -37,16 +35,19 @@
                                 <span class="gray9 mgr10">浏览数:{{$data->art_view}}</span>
                             </p>
                         </div>
+                        <script>
+                            $(function(){
+                                $('.manage').hover(function(){
+                                    $('.sub_menu').css('display','block')
+                                },function(){
+                                    $('.sub_menu').css('display','none')
+                                })
+                            })
+                        </script>
                     </div>
                     <div class="main_text">
                         <p>{!! $data->art_content !!}</p>
                         <div class="wealth_record cb"></div>
-                        <div class="act_btns tc ft12 cb">
-                            <a class="btn_basic btn_g mgr10"  title="回复" href="#__cmt_content_comment"><i class="i_reply"></i>回复</a>
-                        </div>
-                        <p class="clearfix cb">
-                            <span class="fr">分享到：<a href="javascript:///" onclick="postToWb('sina');" title="分享到新浪微博" class="isSyncIcon isSyncSinaOn"></a><a href="javascript:///" onclick="postToWb('qq');" title="分享到腾讯微博" class="isSyncIcon isSyncQqOn"></a><a href="javascript:///" onclick="postToWb('qzone');" title="分享到QQ空间" class="isSyncIcon isSyncQZoneOn2"></a></span>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -55,48 +56,48 @@
                 <div class="mod_comment clearfix">
 
                     <!-- 回复begin -->
-                    <form action="?do=publicComment" method="post" class="">
-                        <a name="__cmt_content_comment"></a>
-                        <input type="hidden" name="reply_id" value="0" />
-                        <input type="hidden" name="syn" id="syn_0" value="" />
-                        <input type="hidden" name="page" value="1" />
-                        <input type="hidden" name="floor" value="1" />
-                        <div class="write clearfix mgt40 mgb20">
-                            <div class="photo"><a><img width="70" height="70" src="http://avatar0.hoto.cn/c8/dc/10673352_70.jpg" alt="{{$data->name}}" /></a></div>
-                            <div class="cmt_main clearfix">
-                                <textarea id="topic_comment_content_reply" name="content"></textarea>
-                                <input type="hidden" value="9ka3e3u4r1dq258lbuof4udi63" id="_UPHASH" />
-                                <script type="text/javascript">
-                                    KindEditor.lang({
-                                        hide : '隐藏内容',
-                                        phiz : '插入表情'
-                                    });
-                                    KindEditor.ready(function(K) {
-                                        editor = K.create('#topic_comment_content_reply', {
-                                            resizeType : 0,
-                                            allowPreviewEmoticons : false,
-                                            allowImageUpload : false,
-                                            urlType: 'absolute',
-                                            width: '575px',
-                                            height: '170px',
-                                            items : ['phiz', 'link', 'hide']
-                                        });
-                                        var html = '<span style="font-size:12px;float:right;padding:2px;"><a href="http://wo.haodou.com/topic.php?do=publicComment&topic_id=522809&page=1&floor=1" target="_blank">使用高级模式回复</a></span>';
-                                        jQuery(editor.toolbar.div[0]).append(html);
-                                        jQuery(editor.edit.iframe[0].contentWindow).focus(function() {
-                                            if(!hd.login.isLogin())
-                                                hd.login.showLogin();
-                                        });
-                                    });
-                                </script>
+                    {{--<form action="?do=publicComment" method="post" class="">--}}
+                        {{--<a name="__cmt_content_comment"></a>--}}
+                        {{--<input type="hidden" name="reply_id" value="0" />--}}
+                        {{--<input type="hidden" name="syn" id="syn_0" value="" />--}}
+                        {{--<input type="hidden" name="page" value="1" />--}}
+                        {{--<input type="hidden" name="floor" value="1" />--}}
+                        {{--<div class="write clearfix mgt40 mgb20">--}}
+                            {{--<div class="photo"><a><img width="70" height="70" src="http://avatar0.hoto.cn/c8/dc/10673352_70.jpg" alt="{{$data->name}}" /></a></div>--}}
+                            {{--<div class="cmt_main clearfix">--}}
+                                {{--<textarea id="topic_comment_content_reply" name="content"></textarea>--}}
+                                {{--<input type="hidden" value="9ka3e3u4r1dq258lbuof4udi63" id="_UPHASH" />--}}
+                                {{--<script type="text/javascript">--}}
+                                    {{--KindEditor.lang({--}}
+                                        {{--hide : '隐藏内容',--}}
+                                        {{--phiz : '插入表情'--}}
+                                    {{--});--}}
+                                    {{--KindEditor.ready(function(K) {--}}
+                                        {{--editor = K.create('#topic_comment_content_reply', {--}}
+                                            {{--resizeType : 0,--}}
+                                            {{--allowPreviewEmoticons : false,--}}
+                                            {{--allowImageUpload : false,--}}
+                                            {{--urlType: 'absolute',--}}
+                                            {{--width: '575px',--}}
+                                            {{--height: '170px',--}}
+                                            {{--items : ['phiz', 'link', 'hide']--}}
+                                        {{--});--}}
+                                        {{--var html = '<span style="font-size:12px;float:right;padding:2px;"><a href="http://wo.haodou.com/topic.php?do=publicComment&topic_id=522809&page=1&floor=1" target="_blank">使用高级模式回复</a></span>';--}}
+                                        {{--jQuery(editor.toolbar.div[0]).append(html);--}}
+                                        {{--jQuery(editor.edit.iframe[0].contentWindow).focus(function() {--}}
+                                            {{--if(!hd.login.isLogin())--}}
+                                                {{--hd.login.showLogin();--}}
+                                        {{--});--}}
+                                    {{--});--}}
+                                {{--</script>--}}
 
-                                <div class="clearfix cb" style="position:relative;">
-                                    <input type="submit" class="btn_60 fr" name="reply_submit" rid="0" value="回复"  />
-                                    <div class="mgt5 fl" id="sync_div_0"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                                {{--<div class="clearfix cb" style="position:relative;">--}}
+                                    {{--<input type="submit" class="btn_60 fr" name="reply_submit" rid="0" value="回复"  />--}}
+                                    {{--<div class="mgt5 fl" id="sync_div_0"></div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
                     <!-- 回复end -->
 
                 </div>
